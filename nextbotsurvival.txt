@@ -1,0 +1,9 @@
+"nextbotsurvival"
+{
+	"base"		"base"
+	"title"		"Nextbot Survival"
+	"category"	"other"
+	"maps"		"^gm_|^gmod_|^phys_"
+	"menusystem"	"1"
+	"workshopid"	""
+}
