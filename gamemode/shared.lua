@@ -1,6 +1,8 @@
 GM.Name = "Nextbot Survival"
 GM.Author = "JellyDoge"
 
+NS = NS or {}
+
 function Notify( ply, str, duration, notifytype )
     if( SERVER && duration >= 0 ) then
         net.Start( "notify" )
@@ -26,4 +28,11 @@ if( CLIENT ) then
             notification.AddLegacy( net.ReadString(), NOTIFY_GENERIC, net.ReadInt( 16 ) )
         end
     end)
+end
+
+if SERVER then
+    function NS:PlayMusic()
+        net.Start( "PlayFinalMusic" )
+        net.Broadcast()
+    end
 end

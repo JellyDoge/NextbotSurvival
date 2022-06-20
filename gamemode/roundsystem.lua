@@ -68,7 +68,7 @@ function RoundEndCheck()
         v:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
     end
 
-    time = 601
+    time = 181
     if( roundActive == false ) then return end
 
     timer.Create( "checkdelay", 1, time, function()
@@ -88,15 +88,14 @@ function RoundEndCheck()
 
         UpdateAlive( roundAlive )
 
-        print( "Alive players: " .. tostring(roundAlive) )
+        --print( "Alive players: " .. tostring(roundAlive) )
 
         if( roundAlive <= 1 ) then
             EndRound()
         end
 
         if( time == 180 && roundActive == true ) then
-            print( "Playing audio..." )
-            net.Start( "PlayFinalMusic" )
+            NS:PlayMusic()
         end
 
     end)
@@ -160,7 +159,7 @@ function BotSpawner()
     Quandale = false
     Bing = false
 
-    timer.Create( "Bot1", 0.1, 1, function()
+    timer.Create( "Bot1", 10, 1, function()
         -- 10
         print( "Bot 1 Timer" )
         local saul = ents.Create( "npc_anim_skeletons" )
@@ -169,7 +168,7 @@ function BotSpawner()
 
     end)
     
-    timer.Create( "Bot2", 60, 1, function()
+    timer.Create( "Bot2", 70, 1, function()
         -- 70
         print( "Bot 2 Timer" )
         local sandy = ents.Create( "npc_walter" )
@@ -178,7 +177,7 @@ function BotSpawner()
 
     end)
 
-    timer.Create( "Bot3", 120, 1, function()
+    timer.Create( "Bot3", 130, 1, function()
         -- 130
         print( "Bot 3 Timer" )
         local quandale = ents.Create( "npc_pervertedapple" )
@@ -187,7 +186,7 @@ function BotSpawner()
 
     end)
 
-    timer.Create( "Bot4", 180, 1, function()
+    timer.Create( "Bot4", 190, 1, function()
         -- 190
         print( "Bot 4 Timer" )
         local bc = ents.Create( "npc_therock" )
@@ -196,7 +195,7 @@ function BotSpawner()
 
     end)
 
-    timer.Create( "Final", 10, 1, function()
+    timer.Create( "Final", 500, 1, function()
         -- 310
         print( "Final Timer" )
 

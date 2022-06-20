@@ -169,7 +169,7 @@ end
 hook.Add( "HUDShouldDraw", "HideDefaultHud", HideHud )
 
 net.Receive( "PlayFinalMusic", function()
---    surface.PlaySound( "survive.wav" )
+    surface.PlaySound( "survive.wav" )
 end)
 
 hook.Add( "HUDPaint", "Crosshair", function()
