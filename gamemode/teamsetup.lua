@@ -19,8 +19,6 @@ function ply:SetupPlayer()
     self:SetRunSpeed( 500 ) --400
     self:SetModel( "models/player/Group03m/Male_0" .. math.random(1,9) .. ".mdl" )
 
-    self:GiveWeapons()
-
 end
 
 function ply:GiveWeapons()
@@ -33,6 +31,10 @@ function ply:GiveWeapons()
     self:GiveAmmo( 12, "357", true )
     --self:GiveAmmo( 0, "smg1", true)
 end
+
+net.Receive( "GiveWeapons", function( len )
+    self:GiveWeapons()
+end)
 
 -- weapon_ai_scanner
 -- mg_357

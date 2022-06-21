@@ -42,12 +42,13 @@ function RoundStart()
             RoundEndCheck()
         end
 
-        -- Activates BotSpawner()
+        -- Activates BotSpawner() and gives weapons
         if( roundActive == true ) then
             print( "Bot spawner started...")
             BotSpawner()
-        end
 
+            NS:GiveWeapons()
+        end
 
         UpdateTimer( time )
         UpdateAlive( Alive )
@@ -68,6 +69,7 @@ function RoundEndCheck()
         v:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
     end
 
+    -- Round time in seconds
     time = 181
     if( roundActive == false ) then return end
 
@@ -153,11 +155,6 @@ function EndRound( winners )
 end
 
 function BotSpawner()
-    
-    Saul = false
-    Sandy = false
-    Quandale = false
-    Bing = false
 
     timer.Create( "Bot1", 10, 1, function()
         -- 10
@@ -202,15 +199,9 @@ function BotSpawner()
 
     end)
 
-
-        -- bing chilling
-        -- saul
-        -- sandy
-        -- quandale
 end
 
 -- npc_bc
--- npc_monstrum_fiend
 -- npc_anim_skeletons
 -- npc_gigachad_soldier
 -- npc_pervertedapple
@@ -220,3 +211,6 @@ end
 -- npc_therock
 -- npc_uncle
 -- npc_walter
+
+-- npc_monstrum_fiend
+-- drg_roach_licker

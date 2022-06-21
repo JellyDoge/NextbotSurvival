@@ -35,4 +35,9 @@ if SERVER then
         net.Start( "PlayFinalMusic" )
         net.Broadcast()
     end
+
+    function NS:GiveWeapons()
+        net.Start ( "GiveWeapons" )
+        net.Broadcast()
+    end
 end
