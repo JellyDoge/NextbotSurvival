@@ -12,6 +12,7 @@ util.AddNetworkString( "round_timer" )
 util.AddNetworkString( "round_active" )
 util.AddNetworkString( "round_alive" )
 util.AddNetworkString( "PlayFinalMusic" )
+util.AddNetworkString( "GiveWeapons" )
 
 function GM:PlayerInitialSpawn( ply )
 spawnPointsNPC = util.KeyValuesToTable( file.Read( "nextbotsurvival/spawnpoints/" .. tostring( game.GetMap() ) .. "/spawnpointsnpc.txt", "DATA" ) )
