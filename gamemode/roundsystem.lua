@@ -15,7 +15,7 @@ function RoundStart()
     local time = 10
     UpdateTimer( time )
     timer.Create( "round", 1, time, function()
-        
+
         time = time - 1
 
         -- Counts all players
@@ -103,7 +103,7 @@ function RoundEndCheck()
     end)
 
     --if( roundAlive == 0 ) then
-    --    timer.Create( "failsale" , 5, 1, function() 
+    --    timer.Create( "failsale" , 5, 1, function()
     --       EndRound()
     --    end)
     --end
@@ -156,16 +156,49 @@ end
 
 function BotSpawner()
 
+    Saul = false
+    Sandy = false
+    Quandale = false
+    Bing = false
+
+    local spawnTable = {
+      [1] = "npc_bc",
+      [2] = "npc_monstrum_fiend",
+      [3] = "npc_anim_skeletons",
+      [4] = "npc_gigachad_soldier",
+      [5] = "npc_pervertedapple",
+      [6] = "npc_quandale",
+      [7] = "npc_sandy",
+      [8] = "npc_luayer",
+      [9] = "npc_therock",
+      [10] = "npc_uncle",
+      [11] = "npc_walter"
+    }
+
+
+    timer.Create( "Bot", 60, 3, function()
+      -- Main Spawn Function
+      print( "Bot Spawned" )
+      local mobNum = math.random(1, #spawnTable)
+      local mob = ents.Create(mobNum)
+      table.remove(spawnTable, mobNum)
+      mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
+      mob:Spawn()
+
+    end)
+
     timer.Create( "Bot1", 10, 1, function()
         -- 10
         print( "Bot 1 Timer" )
-        local saul = ents.Create( "npc_anim_skeletons" )
-        saul:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
-        saul:Spawn()
+        local mobNum = math.random(1, #spawnTable)
+        local mob = ents.Create(mobNum)
+        table.remove(spawnTable, mobNum)
+        mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
+        mob:Spawn()
 
     end)
-    
-    timer.Create( "Bot2", 70, 1, function()
+
+  --[[  timer.Create( "Bot2", 70, 1, function()
         -- 70
         print( "Bot 2 Timer" )
         local sandy = ents.Create( "npc_walter" )
@@ -190,7 +223,7 @@ function BotSpawner()
         bc:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
         bc:Spawn()
 
-    end)
+    end) ]]--
 
     timer.Create( "Final", 500, 1, function()
         -- 310
