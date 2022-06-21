@@ -162,38 +162,38 @@ function BotSpawner()
     Bing = false
 
     local spawnTable = {
-    [1] = "npc_bc",
-    [2] = "npc_anim_skeletons",
-    [3] = "npc_gigachad_soldier",
-    [4] = "npc_pervertedapple",
-    [5] = "npc_quandale",
-    [6] = "npc_sandy",
-    [7] = "npc_luayer",
-    [8] = "npc_therock",
-    [9] = "npc_uncle",
-    [10] = "npc_walter"
+    "npc_bc",
+    "npc_anim_skeletons",
+    "npc_gigachad_soldier",
+    "npc_pervertedapple",
+    "npc_quandale",
+    "npc_sandy",
+    "npc_luayer",
+    "npc_therock",
+    "npc_uncle",
+    "npc_walter"
     }
 
 
     timer.Create( "Bot", 60, 3, function()
       -- Main Spawn Function
       print( "Bot Spawned" )
-      local mobNum = math.random(1, #spawnTable)
+      local mobNum = table.Random(spawnTable)
       local mob = ents.Create(mobNum)
       mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
       mob:Spawn()
-      table.remove(spawnTable, mobNum)
+      table.RemoveByValue(spawnTable,mobNum)
 
     end)
 
     timer.Create( "Bot1", 10, 1, function()
         -- 10
         print( "Bot 1 Timer" )
-        local mobNum = math.random(1, #spawnTable)
+        local mobNum = table.Random(spawnTable)
         local mob = ents.Create(mobNum)
         mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
         mob:Spawn()
-        table.remove(spawnTable, mobNum)
+        table.RemoveByValue(spawnTable,mobNum)
 
     end)
 
