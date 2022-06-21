@@ -181,9 +181,9 @@ function BotSpawner()
       print( "Bot Spawned" )
       local mobNum = math.random(1, #spawnTable)
       local mob = ents.Create(mobNum)
-      table.remove(spawnTable, mobNum)
       mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
       mob:Spawn()
+      table.remove(spawnTable, mobNum)
 
     end)
 
@@ -192,9 +192,9 @@ function BotSpawner()
         print( "Bot 1 Timer" )
         local mobNum = math.random(1, #spawnTable)
         local mob = ents.Create(mobNum)
-        table.remove(spawnTable, mobNum)
         mob:SetPos( Vector( spawnPointsNPC[ math.random( 1, #spawnPointsNPC ) ] ) )
         mob:Spawn()
+        table.remove(spawnTable, mobNum)
 
     end)
 
