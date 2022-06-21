@@ -162,17 +162,17 @@ function BotSpawner()
     Bing = false
 
     local spawnTable = {
-      [1] = "npc_bc",
-      [2] = "npc_monstrum_fiend",
-      [3] = "npc_anim_skeletons",
-      [4] = "npc_gigachad_soldier",
-      [5] = "npc_pervertedapple",
-      [6] = "npc_quandale",
-      [7] = "npc_sandy",
-      [8] = "npc_luayer",
-      [9] = "npc_therock",
-      [10] = "npc_uncle",
-      [11] = "npc_walter"
+     "npc_bc",
+     "npc_monstrum_fiend",
+     "npc_anim_skeletons",
+     "npc_gigachad_soldier",
+     "npc_pervertedapple",
+     "npc_quandale",
+     "npc_sandy",
+     "npc_luayer",
+     "npc_therock",
+     "npc_uncle",
+     "npc_walter"
     }
 
 
